@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cyrus Chambers Portfolio</title>
+<meta name="description" content="Mechanical engineering portfolio of Cyrus Chambers, Northeastern University: vehicle dynamics, automotive repair, and robotics projects.">
+<meta property="og:title" content="Cyrus Chambers Portfolio">
+<meta property="og:description" content="Mechanical engineering portfolio of Cyrus Chambers, Northeastern University: vehicle dynamics, automotive repair, and robotics projects.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/fsae.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+    :root {
+    --ink: #1c1f24;
+    --muted: #5b6270;
+    --line: #dfe2e7;
+    --accent: #c8102e;
+    --soft: #f4f5f7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #fff; color: var(--ink);
+    font-family: "Inter", "Liberation Sans", sans-serif; font-size: 10.4pt; line-height: 1.5; }
+  .page { width: 8.5in; height: 11in; padding: 0.65in 0.7in 0.55in; position: relative;
+    page-break-after: always; overflow: hidden; display: flex; flex-direction: column; }
+  .page:last-child { page-break-after: auto; }
+  .footer { position: absolute; left: 0.7in; right: 0.7in; bottom: 0.32in; display: flex;
+    justify-content: space-between; font-size: 7.8pt; color: var(--muted); letter-spacing: 0.04em;
+    border-top: 1px solid var(--line); padding-top: 6px; }
+  h1, h2, h3 { font-family: "Inter Display", "Inter", sans-serif; margin: 0; }
+  .eyebrow { font-size: 8pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  h2 { font-size: 22pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; margin-top: 4px; }
+  .meta { font-size: 9pt; color: var(--muted); margin-top: 4px; }
+  .rule { height: 3px; width: 44px; background: var(--accent); margin: 12px 0 14px; }
+  p { margin: 0 0 9px; }
+  h3 { font-size: 11pt; font-weight: 600; margin: 12px 0 5px; }
+  ul { margin: 0 0 8px; padding-left: 16px; }
+  li { margin-bottom: 3px; }
+  figure { margin: 0; }
+  figure img { display: block; width: 100%; border-radius: 4px; }
+  figcaption { font-size: 8.3pt; color: var(--muted); margin-top: 5px; line-height: 1.4; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+  .tag { font-size: 7.8pt; font-weight: 500; padding: 2px 8px; border: 1px solid var(--line); border-radius: 20px; color: var(--muted); }
+
+  /* cover */
+  .cover { padding: 0; }
+  .cover .hero { height: 4.6in; background: #fff; display: flex; align-items: flex-end; justify-content: center; padding: 0.4in 0.5in 0; }
+  .cover .hero img { width: 100%; max-height: 4.2in; object-fit: contain; }
+  .cover .body { padding: 0.4in 0.7in 0; flex: 1; }
+  .cover h1 { font-size: 32pt; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .cover .sub { font-size: 13pt; color: var(--muted); margin-top: 8px; }
+  .cover .contact { font-size: 8.8pt; color: var(--muted); margin-top: 10px; }
+  .cover .contact span + span::before { content: "·"; margin: 0 7px; color: #b5bac3; }
+  .cover .intro { margin-top: 18px; font-size: 10.6pt; max-width: 6.6in; }
+  .cover .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+  .stat { background: var(--soft); border-radius: 6px; padding: 10px 12px; }
+  .stat b { display: block; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
+  .stat span { font-size: 9pt; line-height: 1.4; display: block; }
+
+  .toc { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; font-size: 9.2pt; }
+  .toc div { display: flex; gap: 8px; border-bottom: 1px solid var(--line); padding: 4px 0; }
+  .toc i { font-style: normal; color: var(--accent); font-weight: 600; width: 18px; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 22px; align-items: start; }
+  .graphs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .graphs > *, .two > *, .split > * { min-width: 0; }
+  .graph img { height: 2.75in; object-fit: contain; }
+  .graph.row { display: grid; grid-template-columns: 3.3in 1fr; gap: 20px; align-items: center; padding: 14px; }
+  .graph.row img { width: 3.3in; height: 3.45in; min-width: 0; }
+  .graph.row > * { min-width: 0; }
+  .graph.row figcaption { font-size: 9pt; margin: 0 0 8px; }
+  .cover .tiles { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; height: 4.3in; }
+  .cover .tiles img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .graph { border: 1px solid var(--line); border-radius: 6px; padding: 10px 10px 8px; }
+  .graph img { border-radius: 0; }
+  .legend { display: flex; gap: 14px; font-size: 8pt; color: var(--muted); margin-top: 4px; }
+  .legend i { display: inline-block; width: 16px; height: 3px; vertical-align: middle; margin-right: 5px; border-radius: 2px; }
+  .callout { background: var(--soft); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 9.6pt; margin: 6px 0 10px; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+  .fact { border-top: 2px solid var(--accent); padding-top: 6px; }
+  .fact b { display: block; font-size: 15pt; font-family: "Inter Display", sans-serif; font-weight: 700; }
+  .fact span { font-size: 8.3pt; color: var(--muted); }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 26px; margin-top: 6px; }
+  .skills h3 { margin-top: 0; font-size: 9pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+  .skills p { font-size: 9.6pt; }
+  /* ---- web layout: printed pages become stacked sections ---- */
+  html, body { background: #eceef1; }
+  body { padding-block: 32px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .page { width: 100%; max-width: 8.5in; height: auto; min-height: 0; margin: 0 auto 28px; overflow: visible;
+    background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(28,31,36,.08), 0 8px 24px rgba(28,31,36,.06);
+    padding: 0.65in 0.7in 0.7in; }
+  .page:last-of-type { margin-bottom: 0; }
+  .cover { padding: 0 0 0.6in; overflow: hidden; }
+  .cover .tiles { border-radius: 8px 8px 0 0; overflow: hidden; }
+  .footer { display: none; }
+  .site-footer { max-width: 8.5in; margin: 20px auto 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-size: 7.8pt; color: var(--muted); letter-spacing: 0.04em; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  .contact a { text-decoration: underline !important; text-decoration-color: #b5bac3 !important; text-underline-offset: 2px; }
+  .pdf-link { display: inline-block; margin-top: 14px; font-size: 8.8pt; font-weight: 600; color: var(--accent); text-decoration: none;
+    border: 1px solid var(--accent); border-radius: 20px; padding: 4px 12px; }
+  .pdf-link:hover { background: var(--accent); color: #fff; }
+  h2 { text-wrap: balance; }
+  img { max-width: 100%; }
+
+  @media (max-width: 760px) {
+    body { padding-block: 16px; font-size: 11pt; }
+    .page { padding: 28px 20px 32px; border-radius: 6px; margin-bottom: 16px; }
+    .cover { padding: 0 0 28px; }
+    .cover .body { padding: 24px 20px 0; }
+    .cover .tiles { height: 62vw; grid-template-columns: 1.6fr 1fr 1fr; border-radius: 6px 6px 0 0; }
+    .cover h1 { font-size: 26pt; }
+    .cover .sub { font-size: 11.5pt; }
+    .cover .contact span { display: block; }
+    .cover .contact span + span::before { content: none; }
+    .cover .stats, .facts { grid-template-columns: 1fr; }
+    .two, .split, .skills { grid-template-columns: 1fr; gap: 14px; }
+    h2 { font-size: 18pt; }
+    figure img { height: auto !important; aspect-ratio: 4 / 3; }
+    .graph.row { grid-template-columns: 1fr; gap: 12px; padding: 10px; }
+    .graph.row img { width: 100%; height: auto; aspect-ratio: auto; }
+    .facts .fact b { font-size: 14pt; }
+  }
+</style>
+</head>
+<body>
+<!-- COVER -->
+<section class="page cover">
+  <div class="tiles"><img src="img/fsae.jpg" alt="Northeastern Electric Racing car" style="object-position:30% center"><img src="img/mini.jpg" alt="Mini Cooper S" style="object-position:14% center"><img src="img/arm1.jpg" alt="Beach cleaning robot" style="object-position:center 40%"></div>
+  <div class="body">
+    <div class="eyebrow">Mechanical Engineering Portfolio</div>
+    <h1 style="margin-top:8px">Cyrus Chambers</h1>
+    <div class="sub">B.S. Mechanical Engineering, Minor in Computer Science · Northeastern University</div>
+    <div class="contact">
+      <span>San Francisco, CA &amp; Boston, MA</span><span>(415) 236-2369</span><span>chambers.cy@northeastern.edu</span><span><a href="https://www.linkedin.com/in/cyrus-chambers/" style="color:inherit" target="_blank" rel="noopener">linkedin.com/in/cyrus-chambers</a></span>
+    </div>
+    <p class="intro">
+      The place in the engineering world that fascinates me the most is the intersection of mechanical
+      hardware, software, and physics theory. I love seeing the tangible application of my code and
+      building the mechanical system that it interacts with. This portfolio collects the projects I am
+      most proud of, from vehicle dynamics simulation on a Formula SAE electric race car, to rebuilding the
+      suspension on my own car, to robots I have designed, built, and programmed.
+    </p>
+    <a class="pdf-link" href="Cyrus_Chambers_Portfolio.pdf" target="_blank" rel="noopener">Download PDF version</a>
+    <div class="stats">
+      <div class="stat"><b>Education</b><span>Northeastern University, Class of 2029<br>GPA 3.94 · Dean's List<br><span style="white-space:nowrap">Tau Beta Pi</span></span></div>
+      <div class="stat"><b>Seeking</b><span>Mechanical engineering co-op or internship, Spring 2027</span></div>
+      <div class="stat"><b>Interests</b><span>Automotive, space, defense, and robotics hardware</span></div>
+    </div>
+  </div>
+  <div class="footer" style="left:0.7in;right:0.7in"><span>CYRUS CHAMBERS</span><span>PORTFOLIO 2026</span></div>
+</section>
+
+<!-- NER 1 -->
+<section class="page">
+  <div class="eyebrow">01 · Northeastern Electric Racing</div>
+  <h2>Vehicle Dynamics and Steering Hardware</h2>
+  <div class="meta">Performance Analysis Engineer · Boston, MA · January 2026 to Present</div>
+  <div class="rule"></div>
+  <figure style="margin-bottom:14px">
+    <img src="img/fsae.jpg" alt="NER Formula SAE car" style="height:2.9in;object-fit:cover;object-position:center 60%">
+    <figcaption>Northeastern's Formula SAE car. I work on the vehicle dynamics team, on both simulation and parts for the car.</figcaption>
+  </figure>
+  <div class="two">
+    <div>
+      <h3>Building a bicycle model</h3>
+      <p>
+        My most recent project for the club was building a bicycle model in Python for the team's simulation
+        software. A bicycle model lumps the two front tires and the two rear tires together, so the car is
+        described by just a front axle, a rear axle, and the mass between them. I built it to follow the car's
+        real specifications. This allowed us to measure the cause and effect of various parameters without
+        the added complexity of nonlinear tire models and load transfer.
+      </p>
+    </div>
+    <div>
+      <h3>Why it was useful</h3>
+      <p>
+        The model let us vary parameters such as weight distribution, wheelbase, and cornering stiffness and see
+        the effect on acceleration, lap time, yaw, and slip angles. For example, whether the car understeers or
+        oversteers depends on only a couple of factors, including front/rear mass distribution and cornering
+        stiffness, which makes it much easier to find which input values create the desired output.
+      </p>
+      <p>
+        This gave us a better understanding not only of how, but why the car performs the way it does, and it
+        sped up the design process by letting us compare options before committing to physical changes.
+      </p>
+    </div>
+  </div>
+  <div class="callout">
+    <b>Design and machining.</b> I also do a lot of mechanical design and machining on NER. I designed and machined
+    custom parts for the steering column using SolidWorks and CAD/CAM, and worked on designing and machining a
+    steering knuckle, using a manual mill for the fabrication.
+  </div>
+  <div class="tags"><span class="tag">Python</span><span class="tag">Vehicle dynamics</span><span class="tag">Simulation</span><span class="tag">SolidWorks</span><span class="tag">CAD/CAM</span><span class="tag">Manual milling</span></div>
+  <div class="footer"><span>CYRUS CHAMBERS</span><span>02</span></div>
+</section>
+
+<!-- NER 2 graphs -->
+<section class="page">
+  <div class="eyebrow">01 · Northeastern Electric Racing</div>
+  <h2>Simulation Results</h2>
+  <div class="meta">Output plots from the team's simulation software</div>
+  <div class="rule"></div>
+  <p style="max-width:6.6in">
+    These are plots from my bicycle model. Being able to see slip angles and yaw moment respond as I changed
+    one input at a time is what made the model so effective for comparing design options.
+  </p>
+  <div class="graph row">
+    <img src="img/g_slip_trim.png" alt="Front and rear slip angles">
+    <div>
+      <div class="legend" style="margin:0 0 8px"><span><i style="background:#636efa"></i>Front axle</span><span><i style="background:#ef553b"></i>Rear axle</span></div>
+      <figcaption><b>Front and rear slip angles (deg).</b> The car is given a steering input in one direction and then the other.
+      After a short, well damped transient, both axles settle to a steady slip angle of about 5&deg;.</figcaption>
+      <figcaption>The front and rear slip angles end up almost equal, which in a bicycle model means the car is close to
+      neutral steer. Moving the mass distribution or the cornering stiffness opens a gap between the two lines, and which
+      axle slips more tells you whether the car will understeer or oversteer.</figcaption>
+    </div>
+  </div>
+  <div class="graph row" style="margin-top:14px">
+    <img src="img/g_yaw_trim.png" alt="Yaw moment">
+    <div>
+      <div class="legend" style="margin:0 0 8px"><span><i style="background:#636efa"></i>Yaw moment</span></div>
+      <figcaption><b>Yaw moment (N&middot;m).</b> The yaw moment spikes each time the steering changes, swings back, and then
+      returns to zero as the car settles into the turn.</figcaption>
+      <figcaption>Returning to zero is what should happen: in a steady corner the front and rear tire forces balance, so
+      there is no net moment rotating the car. How quickly the oscillation dies out shows how stable the car's yaw
+      response is.</figcaption>
+    </div>
+  </div>
+  <div class="footer"><span>CYRUS CHAMBERS</span><span>03</span></div>
+</section>
+
+<!-- MINI -->
+<section class="page">
+  <div class="eyebrow">02 · Automotive Mechanic</div>
+  <h2>Rebuilding a 2005 Mini Cooper S</h2>
+  <div class="meta">San Francisco, CA · June to September 2026</div>
+  <div class="rule"></div>
+  <figure style="margin-bottom:12px">
+    <img src="img/mini.jpg" alt="Mini Cooper S on jack stands in a garage" style="height:3.6in;object-fit:cover;object-position:center 55%">
+    <figcaption>My R53 Mini Cooper S on jack stands mid-job, with the rear suspension and brakes taken apart.</figcaption>
+  </figure>
+  <div class="facts">
+    <div class="fact"><b>$5,000+</b><span>saved in professional labor charges</span></div>
+    <div class="fact"><b>~100,000 mi</b><span>added to the life of the car</span></div>
+    <div class="fact"><b>50+ mi</b><span>running perfectly since the rebuild</span></div>
+  </div>
+  <div class="two">
+    <div>
+      <h3>Automotive Mechanical Repair</h3>
+      <p>
+        Another project that I am very proud of is the work I have done on my twenty-year-old manual Mini Cooper S.
+        This past summer I rebuilt the entire suspension and did a full brake job, which included pulling the leaking
+        CV drive axles out of the transmission.
+      </p>
+      <ul>
+        <li>Rebuilt the full suspension system</li>
+        <li>Replaced the ball joints and CV axles</li>
+        <li>Full brake job: rotors, pads, sensors, and fluid bleed</li>
+        <li>Transmission and engine oil change</li>
+      </ul>
+    </div>
+    <div>
+      <h3>A Challenge I Overcame</h3>
+      <p>
+        During the test drive, after I thought I had successfully replaced both axles, the left axle popped out of the
+        transmission and the car refused to go into gear. Being in San Francisco, I made the quick decision to pull into
+        a turnout with the momentum I had left, so I could bring the car safely to a stop. I then put the car in neutral
+        and rolled it back down the hill to a small side street near my house, where I worked on the axle and fixed it
+        properly.
+      </p>
+    </div>
+  </div>
+  <div class="tags"><span class="tag">Suspension</span><span class="tag">Brakes</span><span class="tag">Drivetrain</span><span class="tag">Hands-on repair</span></div>
+  <div class="footer"><span>CYRUS CHAMBERS</span><span>04</span></div>
+</section>
+
+<!-- BEACH ROBOT -->
+<section class="page">
+  <div class="eyebrow">03 · Engineering: Project-Based</div>
+  <h2>Beach Cleaning Robot</h2>
+  <div class="meta">Northeastern University · Boston, MA · January to April 2026</div>
+  <div class="rule"></div>
+  <div class="two">
+    <div>
+      <p>
+        For my project-based engineering course, our team built a robot on treads with a robotic arm and a detachable
+        bucket, made to pick up trash on the beach and separate the collected debris from the sand.
+      </p>
+      <h3>What I did</h3>
+      <ul>
+        <li>Designed and fabricated the robot body and arm components in SolidWorks, using 3D printing, laser cutting, and various fasteners</li>
+        <li>Contributed to the circuit design and the programming for servo control of the treads, arm, and claw joints</li>
+      </ul>
+      </div>
+    <div><p>
+        The arm is made of laser cut links that rotate on a turntable base, with a servo at each joint and a claw at the
+        end. The bucket slides out of the side of the body so the collected trash can be emptied once it is
+        separated from the sand.
+      </p>
+      <p>
+        I liked this project because it incorporated multiple aspects of engineering: designing parts on the computer, making them with my hands,
+        and then writing the code that makes them move. A lot of things do not fit or work the first time, and working
+        through that with my team was the best part.
+      </p>
+      <div class="tags"><span class="tag">SolidWorks</span><span class="tag">3D printing</span><span class="tag">Laser cutting</span><span class="tag">Servo control</span><span class="tag">Circuit design</span></div>
+    </div>
+  </div>
+  <div class="two" style="gap:12px;margin-top:8px">
+    <figure><img src="img/arm1.jpg" alt="Beach cleaning robot, side view" style="height:4.35in;object-fit:cover;object-position:center top"></figure>
+    <figure><img src="img/arm2.jpg" alt="Beach cleaning robot, rear view" style="height:4.35in;object-fit:cover;object-position:center top"></figure>
+  </div>
+  <figcaption>The finished robot: tracked chassis, slide-out bucket, and the laser cut arm on its rotating base.</figcaption>
+  <div class="footer"><span>CYRUS CHAMBERS</span><span>05</span></div>
+</section>
+
+<!-- LINE FOLLOWING + SKILLS -->
+<section class="page">
+  <div class="eyebrow">04 · Personal Project</div>
+  <h2>Autonomous Line Following Car</h2>
+  <div class="meta">San Francisco, CA · January to June 2025</div>
+  <div class="rule"></div>
+  <div class="split">
+    <figure><img src="img/linecar.jpg" alt="Line following car on a track" style="height:3.1in;object-fit:cover">
+      <figcaption>The converted RC car on its track, with the Raspberry Pi on top and the IR sensor array at the front.</figcaption></figure>
+    <div>
+      <p>
+        I converted an RC car into an autonomous vehicle. I wired IR sensors to a Raspberry Pi and wrote the Python code
+        that turned the sensor readings into steering and throttle commands, so the car could follow a black line on its own.
+      </p>
+      <p>
+        I also included a recovery routine for curves tighter than the car's turning radius. When the car loses the line in
+        a sharp curve, it backs up and takes another angle at it, which let it get around turns it physically could not make
+        in one pass.
+      </p>
+      <div class="tags"><span class="tag">Raspberry Pi</span><span class="tag">Python</span><span class="tag">IR sensors</span><span class="tag">Controls</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px">
+    <div class="eyebrow">Skills &amp; Background</div>
+    <h2 style="font-size:17pt">How I Work</h2>
+    <div class="rule"></div>
+    <p style="max-width:6.8in">
+      I have a sustained work ethic and attention to detail and I love to learn new things.
+      I am highly collaborative and an optimist, and these things carry me through the point where something feels like it
+      will never work, to the point where I am able to solve the problem. In all of my projects, I document procedures and
+      results with precision and write clear reports, which have been appreciated by my team members.
+    </p>
+    <div class="skills" style="margin-top:12px">
+      <div><h3>Software</h3><p>SolidWorks, AutoCAD, Git, Vim, VSCode, LaTeX, Excel, Adobe Illustrator, Lightroom/Photoshop</p></div>
+      <div><h3>Machining &amp; Tools</h3><p>Manual milling, 3D printing, laser cutting, soldering, oscilloscope, digital multimeter</p></div>
+      <div><h3>Languages</h3><p>Python, Java, C++, MATLAB, Bash</p></div>
+      <div><h3>Coursework</h3><p>Calculus I–III, Differential Equations, Linear Algebra, Mechanics, Statics, Material Science, Electricity &amp; Magnetism</p></div>
+    </div>
+  </div>
+  <div class="footer"><span>CYRUS CHAMBERS</span><span>06</span></div>
+</section>
+
+<footer class="site-footer"><span>CYRUS CHAMBERS</span><span>PORTFOLIO 2026</span></footer>
+</body>
+</html>
